@@ -16,7 +16,7 @@ Before running the application, make sure you have **Node.js** installed.
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/bahrain-tourist-map.git
+    git clone https://github.com/A-Aljami/Zayer-App.git
     cd bahrain-tourist-map
     ```
 
