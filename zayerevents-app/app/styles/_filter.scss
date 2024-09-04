@@ -1,0 +1,170 @@
+.filter {
+  padding: 1rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Ensure positioning for the suggestions list */
+
+  &__select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+
+    border-radius: var(--brad-1);
+    overflow: hidden;
+    border: 2px solid var(--border-color-2);
+    font-weight: 600;
+
+    select {
+      padding: 0 1rem;
+      outline: none;
+      appearance: none;
+      border: 0;
+      flex: 1;
+      color: var(--color--white);
+      background-color: var(--events--bg);
+      cursor: pointer;
+    }
+
+    &::after {
+      position: absolute;
+      content: "\25BC";
+      padding: 1em;
+      right: -4px;
+      color: var(--color--white);
+      background-color: var(--border-color-2);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__suggestions-list {
+    position: absolute;
+    top: 100%; /* Position the list directly below the search bar */
+    left: 0;
+    border: 1px solid #ccc;
+    border-radius: var(--brad-1);
+    background-color: white;
+    width: 100%; /* Match the search bar width */
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000; /* Ensure it appears on top of other elements */
+    box-shadow: var(--box-shadow); /* Add box shadow for better visibility */
+    margin-top: 5px; /* Space between search bar and dropdown */
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  &__suggestion-item:last-child {
+    border-bottom: none;
+  }
+}
+
+.theme-toggler {
+  display: flex;
+  align-items: center;
+
+  &__checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  &__checkbox:checked + label {
+    background-color: var(--header--bg);
+  }
+
+  &__checkbox:checked + label::after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+  }
+
+  &__label {
+    position: relative;
+    width: 54px;
+    height: 29px;
+    background: var(--body--bg);
+    display: block;
+    border-radius: 100px;
+    cursor: pointer;
+
+    transition: background-color 0.25s ease-in-out;
+    border: 2px solid var(--border-color-2);
+    text-indent: -9999px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: calc(100% - 6px);
+      background: var(--color--white);
+      border-radius: 90px;
+      transition: 0.3s;
+    }
+
+    &:active::after {
+      width: 40px;
+    }
+  }
+}
+
+.search-bar {
+  padding: 8px;
+  width: 100%; /* Ensure it takes full width of the container */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* Ensure suggestions list appears relative to the container */
+}
+
+/* Suggestions List */
+.filter__suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 100%; /* Match width of the search bar */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a nicer look */
+}
+
+/* Suggestion Item */
+.filter__suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+
+  &:hover {
+    background-color: #f5f5f5; /* Change background on hover */
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

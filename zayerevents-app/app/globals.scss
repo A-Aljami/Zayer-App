@@ -1,0 +1,166 @@
+@use "./styles/filter";
+@use "./styles/popup";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark Theme Variables */
+.dark-theme {
+  --body-bg: #1e1e1e;
+  --body--bg: #1e1e1e;
+  --events--bg: #262626;
+  --border-color: #363636;
+  --border-color-2: #454545;
+  --color--white: #fff;
+  --color--purple: #7263f3;
+  --color--black: #000;
+  --box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  --brad-1: 0.5rem;
+  --brad-2: 1rem;
+  --brad-3: 1.5rem;
+  --brad-4: 2rem;
+}
+
+/* Light Theme Variables */
+.light-theme {
+  --header--bg: #fff;
+  --body--bg: #ededed;
+  --events--bg: #f9f9f9;
+  --border-color: #e5e5e5;
+  --border-color-2: #dcdcdc;
+  --color--white: #333;
+  --box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  --brad-1: 0.5rem;
+  --brad-2: 1rem;
+  --brad-3: 1.5rem;
+  --brad-4: 2rem;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--body-bg);
+
+  @media screen and (max-width: 700px) {
+    font-size: 90%;
+  }
+}
+
+.content {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1.5rem;
+
+  @media screen and (max-width: 895px) {
+    flex-direction: column;
+  }
+
+  .map-content {
+    width: 75%;
+
+    @media screen and (max-width: 1298px) {
+      width: 65%;
+    }
+
+    @media screen and (max-width: 895px) {
+      width: 100%;
+      height: 55%;
+    }
+  }
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: var(--brad-2);
+  border: 2px solid var(--border-color);
+}
+
+/* Liked Events */
+.liked-events {
+  flex: 1;
+  padding: 1rem 2rem;
+  border-radius: var(--brad-2);
+  background-color: var(--events--bg);
+  box-shadow: var(--box-shadow);
+  border: 2px solid var(--border-color);
+  color: var(--color--white);
+  overflow-y: auto;
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    i {
+      color: #fdc401;
+    }
+  }
+
+  &__event {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--brad-1);
+    background-color: var(--border-color-2);
+    box-shadow: var(--box-shadow);
+    font-weight: 500;
+    color: var(--color--white);
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+/* Liked Events Item (dark and light mode variations) */
+.liked-events__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+
+  /* Dark Mode */
+  background-color: #898484; /* Gray for dark mode */
+}
+
+/* Light Mode Specific Style */
+body.light-theme .liked-events__item {
+  background: linear-gradient(90deg, #ffffff, #dcdcdc); /* White to gray gradient for light mode */
+  color: #333; /* Darker text color for better contrast */
+}
+
+.liked-events__event h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff; /* Default white text, can adjust based on your theme */
+}
+
+body.light-theme .liked-events__event h3 {
+  color: #333; /* Darker text color in light mode */
+}
+
+.unfavourite-button {
+  background-color: transparent;
+  border: none;
+  color: #fdc401; /* Star color */
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: 10px;
+
+  &:hover {
+    color: #ff9900; /* Optional hover effect */
+  }
+}
+
+body.light-theme .unfavourite-button {
+  color: #fdc401; /* Star color remains consistent in light mode */
+}
