@@ -1,7 +1,7 @@
 
 # Bahrain Tourist Events Map
 
-This project is an interactive map application for tourists visiting Bahrain. It helps users discover key events and attractions around the country, displaying them on a map with detailed information about each event or location. The user can search for events, view recommendations, and mark their favorite locations for easy access.
+Zayer is an interactive map application for tourists visiting Bahrain. It helps users discover key events and attractions around the country, displaying them on a map with detailed information about each event or location. The user can search for events, view recommendations, and mark their favorite locations for easy access.
 
 ## Features
 - Interactive map using **Leaflet** and **React-Leaflet**.
@@ -68,17 +68,3 @@ This will start the development server, and you can view the application by visi
 ## About the Application
 
 The app is designed to assist tourists visiting Bahrain by providing an easy-to-use map that displays key locations and events. Users can search for specific locations, mark their favorite spots, and get detailed information about the various events happening in the country. The app features a toggle between light and dark themes for accessibility and user preference.
-
-## Contribution
-
-Feel free to fork the repository, make improvements, and submit a pull request.
-
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature/my-feature`)
-3. Commit your changes (`git commit -m 'Add some feature'`)
-4. Push to the branch (`git push origin feature/my-feature`)
-5. Open a pull request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
